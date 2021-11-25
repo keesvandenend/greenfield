@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { todoReducer } from './todoReducer';
+import { searchReducer } from './searchReducer';
 import { uiReducer } from './uiReducer';
 import { authReducer } from './authReducer';
 
 export const rootReducer = combineReducers({
-  todo: todoReducer,
+  search: searchReducer,
   ui: uiReducer,
   auth: authReducer
 });

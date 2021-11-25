@@ -64,7 +64,7 @@ const Login = () => {
               style={{ textDecoration: 'none', marginLeft: '0.5rem' }}
               to="/register"
             >
-              Create an account
+              Get started
             </Link>
           </div>
         </div>
@@ -100,7 +100,7 @@ const Login = () => {
           type="submit"
           style={{
             height: '48px',
-            background: '#FF0083',
+            background: '#1C9585',
             color: 'white',
             marginTop: '2rem'
           }}

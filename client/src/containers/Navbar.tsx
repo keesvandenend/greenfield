@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     left: 0,
     background: 'white',
-    boxShadow: '0 0 8px 3px rgba(0,0,0,0.2)',
     zIndex: 999,
     padding: '0 16px',
     [theme.breakpoints.down('md')]: {
@@ -22,13 +21,15 @@ const useStyles = makeStyles((theme) => ({
   },
   navLinks: {
     '& > a': {
+      textDecoration: 'none',
       margin: '0 0.3rem'
     }
   },
   authLinks: {
     '& > a': {
       textDecoration: 'none',
-      color: 'black'
+      color: 'black',
+      paddingRight: '1rem'
     }
   }
 }));
@@ -50,27 +51,28 @@ const Navbar = () => {
               <Button
                 style={{
                   textDecoration: 'none',
-                  border: '2px black solid',
+                  border: 'none',
                   height: '48px',
                   width: '80px'
                 }}
               >
-                Home
+                <img width="100%" height="100%" src={'logo-world.png'} />
               </Button>
             </Link>
           </Grid>
           <Grid item xs={6}>
-            <Link to="/demo">
+            <Link to="/search">
               <Button
                 style={{
-                  background: 'black',
-                  color: 'white',
+                  background: 'white',
+                  border: '2px black solid',
+                  color: '#0007bff',
                   textDecoration: 'none',
                   height: '48px',
                   width: '80px'
                 }}
               >
-                Demo
+                Search
               </Button>
             </Link>
           </Grid>

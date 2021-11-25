@@ -95,7 +95,7 @@ const Register = () => {
           type="submit"
           style={{
             height: '48px',
-            background: '#FF0083',
+            background: '#1C9585',
             color: 'white',
             marginTop: '2rem'
           }}

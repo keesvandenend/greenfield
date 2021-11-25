@@ -25,9 +25,9 @@ const AuthLinks = () => {
           {!authState.isLoading ? (
             <>
               <Link to="/login">Login</Link>
-              <span style={{ padding: '0 0.2rem' }}>/</span>
-              <Link style={{ fontWeight: 'bold' }} to="/register">
-                Register
+              <span style={{ padding: '0 0.5rem' }}></span>
+              <Link style={{ padding: '12px', borderRadius: '40px', background: 'black', color: 'white' }} to="/register">
+                Get started
               </Link>
             </>
           ) : (

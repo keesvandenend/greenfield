@@ -1,0 +1,5 @@
+export const GET_ADDRESS = 'GET_ADDRESS';
+
+export const GET_ADDRESS_SUCCESS = 'GET_ADDRESS_SUCCESS';
+
+export const REQUEST_FAILURE = 'REQUEST_FAILURE';

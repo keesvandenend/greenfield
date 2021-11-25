@@ -13,6 +13,7 @@ const Home = () => {
 
   return (
     <div className="App-header">
+      <img width="400px" height="400px" src={'logo-world-large.png'} />
       <p>{welcomeMsg}</p>
     </div>
   );

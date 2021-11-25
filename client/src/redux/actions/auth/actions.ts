@@ -62,7 +62,7 @@ export const login = (creds: UserCreds, history: any) => async (
     dispatch(createLogin());
     const res = await authAPI.loginUser(creds);
     dispatch(loginSuccess(res.data));
-    history.push('/demo');
+    history.push('/search');
   } catch (err) {
     dispatch(catchAuthRequestErr(err));
   }
@@ -75,7 +75,7 @@ export const register = (creds: UserCreds, history: any) => async (
     dispatch(createRegister());
     const res = await authAPI.registerUser(creds);
     dispatch(registerSuccess(res.data));
-    history.push('/demo');
+    history.push('/search');
   } catch (err) {
     dispatch(catchAuthRequestErr(err));
   }
@@ -89,7 +89,7 @@ export const getProfile = (history: any) => async (dispatch: Dispatch<any>) => {
       dispatch(createGetProfile());
       const res = await authAPI.getProfile(token);
       dispatch(getProfileSuccess(res.data));
-      history.push('/demo');
+      history.push('/search');
     } catch (err) {
       dispatch(catchAuthRequestErr(err));
     }
