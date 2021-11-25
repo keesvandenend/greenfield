@@ -2,15 +2,21 @@ import axios from 'axios';
 import { Address } from '../../types';
 
 export const getLocation = async (address: Address) => {
+  console.log('api address', address);
+  //const encodedAddress =
+  //  encodeURIComponent(
+  //    `${address.address || ''} ${address.city || ''} ${address.province || ''} ${address.country || ''} ${address.postalCode || ''}`
+  //    .replace(/ /g, '+')
+  //  );
   const encodedAddress =
     encodeURIComponent(
-      `${address.address || ''} ${address.city || ''} ${address.province || ''} ${address.country || ''} ${address.postalCode || ''}`
+      `${address}`
       .replace(/ /g, '+')
     );
   try {
     const res = await axios({
       method: 'GET',
-      url: `https://google-maps-geocoding.p.rapidapi.com/geocode/json?language=en&address=${encodedAddress}&key=AIzaSyBNW9ny7Q9TS1iRLYWgrWo4CwAb3wmrEik`
+      url: `https://maps.googleapis.com/maps/api/geocode/json?language=en&address=${encodedAddress}&key=AIzaSyBNW9ny7Q9TS1iRLYWgrWo4CwAb3wmrEik`
     });
 
     return res;
