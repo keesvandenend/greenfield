@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
-import Home from './pages/Home';
-import Search from './pages/Search';
 import Navbar from './containers/Navbar';
 
 import { Switch, Route, useHistory, Redirect } from 'react-router-dom';
 
 import SnackBar from './components/snackbar/SnackBar';
+import Loading from './components/loading/Loading';
+import Home from './pages/Home';
 import Login from './pages/Login';
+import Map from './pages/Map';
 import Register from './pages/Register';
+import Search from './pages/Search';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getProfile } from './redux/actions/auth/actions';
@@ -23,6 +25,7 @@ function App() {
   const history = useHistory();
 
   const { currentUser, isLoading } = useSelector((state: IStore) => state.auth);
+  //const { currentUser, isLoading } = useSelector((state: IStore) => state.auth);
 
   useEffect(() => {
     dispatch(getProfile(history));
@@ -37,28 +40,19 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-
-            <PrivateRoute
-              isLoggedIn={!!currentUser}
-              path="/search"
-              component={Search}
-            />
+            <Route path="/search" component={Search} />
+            <Route path="/map" component={Map} />
+            {// --><PrivateRoute
+              //isLoggedIn={!!currentUser}
+              //path="/search"
+              //component={Search}
+            ///>
+            }
             <Route>
-              <Redirect to="/search" />
+              <Redirect to="/" />
             </Route>
           </Switch>
-        ) : (
-          <div
-            style={{
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-          >
-            Loading...
-          </div>
-        )}
+        ) : <Loading />}
       </div>
       <SnackBar
         position={{ vertical: 'bottom', horizontal: 'left' }}

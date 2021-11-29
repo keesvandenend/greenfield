@@ -13,11 +13,16 @@ export type CurrentUser = {
 };
 
 export type Address = {
-  address: string;
+  streetAddress: string;
   city: string;
   province: string;
   country: string;
   postalCode: string;
+}
+
+export type Location = {
+  lat: string;
+  lng: string;
 }
 
 export type AlertType = 'success' | 'info' | 'warning' | 'error' | undefined;
@@ -36,7 +41,8 @@ export type Action = {
 };
 
 export interface ISearchState {
-  search: any;
+  results: any;
+  timezone: any;
   isLoading: boolean;
   err: any;
 }

@@ -2,12 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Home = () => {
-  const [welcomeMsg, setWelcomeMsg] = useState<string>('');
+  const [welcomeMsg, setWelcomeMsg] = useState<string>('Loading...');
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get('/api/start');
-      setWelcomeMsg(res.data.msg);
+      try {
+        const res = await axios.get('/api/start');
+        setWelcomeMsg(res.data.msg);
+      } catch (err) {
+        setWelcomeMsg('Server is asleep today...');
+      }
     })();
   }, []);
 
